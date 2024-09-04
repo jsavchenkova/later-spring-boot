@@ -17,14 +17,12 @@ import ru.practicum.item.model.QItem;
 import ru.practicum.user.User;
 import ru.practicum.user.UserRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-class ItemServiceImpl implements ItemService {
+public class ItemServiceImpl implements ItemService {
     private final ItemRepository repository;
     private final UserRepository userRepository;
     private final UrlMetaDataRetriever urlMetaDataRetriever;
@@ -135,12 +133,16 @@ class ItemServiceImpl implements ItemService {
 
             // Если существующий набор тегов нужно заменить новым (в том числе пустым),
             // то предварительно нужно очистить коллекцию тегов
-            if(request.isReplaceTags()) {
-                item.getTags().clear();
+            Set<String> tags = new HashSet<>();
+            if(!request.isReplaceTags()) {
+          //      item.getTags().clear();
+                tags.addAll(item.getTags());
             }
             // Добавляем переданные теги
             if(request.hasTags()) {
-                item.getTags().addAll(request.getTags());
+             //   item.getTags().addAll(request.getTags());
+                tags.addAll(request.getTags());
+                item.setTags(tags);
             }
             item = repository.save(item);
             return ItemMapper.mapToItemDto(item);

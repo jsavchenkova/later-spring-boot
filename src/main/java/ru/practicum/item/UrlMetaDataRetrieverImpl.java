@@ -24,7 +24,7 @@ import java.time.Instant;
 
 @Slf4j
 @Service
-class UrlMetaDataRetrieverImpl implements UrlMetaDataRetriever {
+public class UrlMetaDataRetrieverImpl implements UrlMetaDataRetriever {
     private final HttpClient client;
 
     // В качестве параметра конструктора, сервис принимает количество секунд в течении которых

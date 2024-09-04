@@ -2,7 +2,7 @@ package ru.practicum.item;
 
 import java.time.Instant;
 
-interface UrlMetaDataRetriever {
+public interface UrlMetaDataRetriever {
     UrlMetadata retrieve(String uri);
 
     // Закрепляем в виде вложенного интерфейса контракт

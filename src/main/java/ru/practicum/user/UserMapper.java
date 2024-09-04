@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-class UserMapper {
+public class UserMapper {
     public static UserDto mapToUserDto(User user) {
         String regDate = DateTimeFormatter
                 .ofPattern("yyyy.MM.dd hh:mm:ss")

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final class ItemMapper {
+public final class ItemMapper {
     private static final DateTimeFormatter dtFormatter = DateTimeFormatter
             .ofPattern("yyyy.MM.dd hh:mm:ss")
             .withZone(ZoneOffset.UTC);

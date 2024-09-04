@@ -1,6 +1,7 @@
 package ru.practicum.item.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,6 +10,7 @@ import ru.practicum.user.User;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "items")
